@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+    body{text-align: center;}
+    button{background-color:red;
+    color:blue;
+    font-weight: bold;
+    width:100px;
+    height:40px;
+    border: none;}
+    h1{color:green;
+    background-color:red;}
+    h2{display:inline;
+    background-color:blue;}
+    button:active{
+    background-color:yellow;}
+    </style>
+</head>
+<body>
+   
+   
+   
+  <h1>People Present:</h1> 
+  <h2 id="count-el">0</h2>
+  <br><br>
+  <button id="increment-btn" onclick="increment()">INCREMENT</button>
+  <script>
+let countEl=document.getElementById("count-el");
+console.log (countEl) 
+let count = 0
+function increment() {
+count=count+1
+countEl.innerHTML = count
+}
+   </script> 
+</body>
+</html>
