@@ -1,40 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Counter</title>
-    <style>
-    body{text-align: center;}
-    button{background-color:red;
-    color:blue;
-    font-weight: bold;
-    width:100px;
-    height:40px;
-    border: none;}
-    h1{color:green;
-    background-color:red;}
-    h2{display:inline;
-    background-color:blue;}
-    button:active{
-    background-color:yellow;}
-    </style>
+   <style>
+        h2{
+            display:inline;
+        }
+        body{
+            text-align: center;
+            background-color: rgba(7, 7, 3, 0.918);
+            color:white;
+        }
+        section{
+            background: rgba(7, 7, 3, 0.918);
+            width:240px;
+            margin:0 auto ;
+            border: white 1px solid;
+            height:50px;
+        }
+        
+        span{
+        float: left;
+        padding: 4%;
+        }
+        h2{
+            margin-left: -40%;
+            
+        }
+        #saveEl{
+            background-color: white;
+            color:black;
+            border:white 1px solid;
+            border-radius: 0%;
+            
+            height:30px;
+            width:80px;
+            font-weight: bold;
+            font-size: large;
+        }
+        button:nth-last-child(1),button:nth-last-child(2){
+            
+            float:right;
+            margin-right:2%;
+            margin-top: 3%;
+            border-radius: 50%;
+            border:white 3px solid;
+            background-color: black;
+            color:white;
+            
+        }
+
+   </style>
 </head>
 <body>
-   
-   
-   
-  <h1>People Present:</h1> 
-  <h2 id="count-el">0</h2>
-  <br><br>
-  <button id="increment-btn" onclick="increment()">INCREMENT</button>
-  <script>
-let countEl=document.getElementById("count-el");
-console.log (countEl) 
-let count = 0
-function increment() {
-count=count+1
-countEl.innerHTML = count
-}
-   </script> 
+    <h1>Human Number Counter</h1>
+    
+ <section>
+      <span>Male:</span>
+      <h2 id="display-el1">0</h2>
+        <button id="increment1">+</button>
+        <button id="decrement1">-</button>
+ </section>
+ 
+ <br>
+ <section>
+      <span>Female: </span>
+      <h2 id="display-el2">0</h2>
+      <button id="increment2">+</button>
+      <button id="decrement2">-</button>
+ </section>
+ <br>
+<button id="saveEl">Sum</button><br>
+
+<p id="prev-el">Previous Counts: </p>
+ <script>
+     const displayEl1=document.getElementById("display-el1")
+        let count1=0
+        const displayEl2=document.getElementById("display-el2")
+        let count2=0
+        const prevEl=document.getElementById("prev-el")
+        increment1.addEventListener("click",function(){
+        count1=count1+1
+        displayEl1.innerText=count1
+        
+        
+        })
+
+        decrement1.addEventListener("click",function(){
+        count1=count1-1
+        displayEl1.innerText=count1
+        
+        })
+
+        
+        increment2.addEventListener("click",function(){
+        count2=count2+1
+        displayEl2.innerText=count2
+        
+        })
+
+        decrement2.addEventListener("click",function(){
+        count2=count2-1
+        displayEl2.innerText=count2
+        })
+        
+        
+        saveEl.addEventListener("click",function(){
+        let sum=count1+count2
+        prevEl.innerText+=" "+ sum+", "
+        displayEl2.innerText=0
+        displayEl1.innerText=0
+        count1=0
+        count2=0
+        })
+        
+       
+
+ </script>
 </body>
 </html>
