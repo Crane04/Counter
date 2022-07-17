@@ -3,16 +3,24 @@ const displayEl1=document.getElementById("display-el1")
         const displayEl2=document.getElementById("display-el2")
         let count2=0
         const prevEl=document.getElementById("prev-el")
+       
         increment1.addEventListener("click",function(){
         count1=count1+1
         displayEl1.innerText=count1
-        
-        
+           
         })
 
         decrement1.addEventListener("click",function(){
-        count1=count1-1
+        
         displayEl1.innerText=count1
+        if (count1===0){
+                count1=count1-0
+                displayEl1.innerText=count1
+        } else{
+                count1=count1-1
+                displayEl1.innerText=count1
+        }
+         
         
         })
 
@@ -24,8 +32,14 @@ const displayEl1=document.getElementById("display-el1")
         })
 
         decrement2.addEventListener("click",function(){
-        count2=count2-1
-        displayEl2.innerText=count2
+                if (count2===0){
+                        count2=count2-0
+                        displayEl2.innerText=count2
+                } else{
+                        count2=count2-1
+                        displayEl2.innerText=count2
+                }
+                 
         })
         
         
